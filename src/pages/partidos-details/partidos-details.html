@@ -9,7 +9,7 @@
     {{sItem.equipo_local}} {{sItem.golesLocales}} - {{sItem.golesVisitantes}} {{sItem.equipo_visitante}}
   </h3>
   <p text-center>{{sItem.status}}</p>
-  <ion-list>
+  <ion-list class="lista">
     <ion-item *ngFor="let se of sEvento ">
       <p *ngIf=" se.local == 's'" text-left>{{se.time}}'' {{se.type}}: {{se.player}}</p>
       <p *ngIf=" se.local == 'n'" text-right> {{se.time}}'' {{se.type}}: {{se.player}}</p>

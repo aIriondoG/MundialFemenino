@@ -15,9 +15,9 @@
       </button>-->
   <ion-list class="lista">
       <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-        {{item.fifa_code}}
+        {{item.name}}
         <p item-right>
-          {{item.puntos}}
+          {{item.fifa_code}}
         </p>
       </button>
   </ion-list>

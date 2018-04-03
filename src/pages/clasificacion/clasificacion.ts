@@ -16,10 +16,13 @@ export class ClasificacionPage {
     puntos: number,
     grupo: number
   }>;
-
+  j: number;
   equipoPasar: any;
   numeroGrupo: number;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.equipoPasar = [];
+    this.equipo = [];
+    this.j = 0;
     this.equipo.push({
       name: 'Rusia',
       fifa_code: 'RUS',
@@ -47,17 +50,50 @@ export class ClasificacionPage {
       grupo: 1
     });
     this.equipo.push({
+      name: 'Gibraltar',
+      fifa_code: 'GBR',
+      puntos: 3,
+      grupo: 2
+    });
+    this.equipo.push({
       name: 'España',
       fifa_code: 'ESP',
       puntos: 15,
       grupo: 1
     });
+    this.equipo.push({
+      name: 'Alemania',
+      fifa_code: 'ALE',
+      puntos: 22,
+      grupo: 2
+    });
+    this.equipo.push({
+      name: 'Francia',
+      fifa_code: 'Fra',
+      puntos: 15,
+      grupo: 2
+    });
 
   }
-  itemTapped(event, numeroGrupo) {
+
+  obtenerEquipos(event, numeroGrupo) {
+    this.j = 0;
+    this.equipoPasar = [];
+    for (let i = 0; i < this.equipo.length; i++) {
+      console.log("i: ", i);
+      console.log("Grupo: ", this.equipo[i].grupo);
+      if (this.equipo[i].grupo == numeroGrupo) {
+        console.log("Introduciendo el equipo numero " + i);
+        this.equipoPasar[this.j] = this.equipo[i];
+        this.j++;
+      }
+    }
+    this.itemTapped(event, numeroGrupo, this.equipoPasar);
+  }
+  itemTapped(event, numeroGrupo, equipoPasar) {
     this.navCtrl.push(ClasificacionDetailsPage, {
       numeroGrupo: numeroGrupo,
-      equipo: this.equipo,
+      equipoPasar: this.equipoPasar
     });
   }
 }

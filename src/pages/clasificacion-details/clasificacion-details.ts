@@ -10,54 +10,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class ClasificacionDetailsPage {
   algo: any;
   grupo: number;
-  equipo: Array<{
-    name: string,
-    fifa_code: string,
-    puntos: number,
-    grupo: number
-  }>;
+  equipo: any;
   verdadero: boolean;
   nomGrupo: string;
   clasificacion: any;
   puntuacion: any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.equipo =[];
     this.grupo = navParams.get('numeroGrupo');
+    this.equipo = navParams.get('equipoPasar');
     console.log("Grupo seleccionado", this.grupo);
-    this.equipo = [];
     this.puntuacion = [];
     this.verdadero = false;
-    this.equipo.push({
-      name: 'Rusia',
-      fifa_code: 'RUS',
-      puntos: 7,
-      grupo: 1
-    });
-    this.equipo.push({
-      name: 'Bielorusia',
-      fifa_code: 'BIE',
-      puntos: 1,
-      grupo: 2
-    });
-    this.equipo.push({
-      name: 'Canada',
-      fifa_code: 'CAN',
-      puntos: 9,
-      grupo: 1
-
-    });
-
-    this.equipo.push({
-      name: 'Estados Unidos',
-      fifa_code: 'USA',
-      puntos: 19,
-      grupo: 1
-    });
-    this.equipo.push({
-      name: 'España',
-      fifa_code: 'ESP',
-      puntos: 15,
-      grupo: 1
-    });
+    
     if (this.grupo == 1) {
       this.nomGrupo = 'A';
     }

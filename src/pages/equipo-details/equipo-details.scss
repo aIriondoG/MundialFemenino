@@ -1,6 +1,6 @@
 page-equipo-details {
     .inicio{
-        background-image: url("../../assets/imgs/EnJ.jpg");
+        background-image: url("../../assets/imgs/estadistica.jpg");
         background-repeat:no-repeat;
         background-position:center center;
         background-attachment:fixed;
@@ -12,9 +12,16 @@ page-equipo-details {
 
         //background-color: red;
     }
-    ion-list{
-        background-color: rgba(0,0,0,0.5);
-       
-        
+    .lista{
+        margin-top: 3em;
+        margin-left: 2em;
+        margin-right: 2em;
+        //background-color:rgba(4, 52, 178,0.6);
+        opacity: 0.7;
+    }
+    .nom{
+        background-color: black;
+        color:white;
+        opacity: 0.8;
     }
 }

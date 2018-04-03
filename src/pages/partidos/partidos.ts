@@ -69,6 +69,7 @@ export class PartidosPage {
       idPartido: 1,
       local: 's'
     });
+    
     this.evento.push({
       id: 2,
       type: 'Tarjeta Roja',

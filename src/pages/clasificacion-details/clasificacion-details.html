@@ -15,10 +15,14 @@
 
 <ion-content class="inicio">
   <ion-list class="lista">
-    <ion-item *ngFor="let e of puntuacion">
-      <p *ngIf=" grupo == e.grupo">
-        {{e.name}}: {{e.puntos}}
-      </p>
-    </ion-item>
+      <button ion-item class="tit">
+        Grupo {{nomGrupo}}
+        
+      </button>
+    <button ion-item *ngFor="let e of puntuacion" class="bot">
+      {{e.name}} --
+        {{e.puntos}}
+      
+    </button>
   </ion-list>
 </ion-content>
