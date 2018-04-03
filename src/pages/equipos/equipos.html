@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Equipos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="inicio">
+    <!--<button ion-item class="indice">
+        Siglas del Equipo
+        <p item-right>
+          Puntos
+        </p>
+      </button>-->
+  <ion-list class="lista">
+      <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+        {{item.fifa_code}}
+        <p item-right>
+          {{item.puntos}}
+        </p>
+      </button>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,24 @@
+page-equipos {
+    .inicio{
+        background-image: url("../../assets/imgs/futbol.jpg");
+        background-repeat:no-repeat;
+        background-position:center center;
+        background-attachment:fixed;
+        -o-background-size: 100% 100%, auto;
+        -moz-background-size: 100% 100%, auto;
+        -webkit-background-size: 100% 100%, auto;
+        background-size: 100% 100%, auto;
+        
+        //background-color: red;
+    }
+    button{
+        
+    }
+    .lista{
+        margin:1em;
+        opacity: 0.3;
+        background-color: rgba(0,0,0,0.5);
+        color: black;
+    }
+    
+}

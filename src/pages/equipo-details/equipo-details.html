@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Detalles del Equipo</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="inicio">
+
+
+  <h3 text-center>
+    Estadisticas de {{sItem.name}}
+  </h3>
+  <p></p>
+  <ion-list class="lista">
+    <ion-item>
+        Partidos ganados: {{sItem.win}}
+    </ion-item>
+    <ion-item>
+        Partidos empatados: {{sItem.draw}}
+    </ion-item>
+    <ion-item>
+        Partidos perdidos: {{sItem.lose}}
+    </ion-item>
+    <ion-item>
+        Partidos jugados: {{sItem.win+sItem.draw+sItem.lose}}
+    </ion-item>
+    <ion-item>
+        Goles marcados: {{sItem.goals}}
+    </ion-item>
+    <ion-item>
+        Goles encajados: {{sItem.goalsAgainst}}
+    </ion-item>
+    <ion-item>
+      Diferencia de goles:{{sItem.goals-sItem.goalsAgainst}}
+    </ion-item>
+  </ion-list>
+  <!--<ul text_center>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>-->
+
+</ion-content>

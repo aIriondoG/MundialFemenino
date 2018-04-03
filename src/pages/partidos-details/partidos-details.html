@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Detalles del partido</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="inicio">
+  <p text-center>{{sItem.location}}</p>
+  <h3 text-center>
+    {{sItem.equipo_local}} {{sItem.golesLocales}} - {{sItem.golesVisitantes}} {{sItem.equipo_visitante}}
+  </h3>
+  <p text-center>{{sItem.status}}</p>
+  <ion-list>
+    <ion-item *ngFor="let se of sEvento ">
+      <p *ngIf=" se.local == 's'" text-left>{{se.time}}'' {{se.type}}: {{se.player}}</p>
+      <p *ngIf=" se.local == 'n'" text-right> {{se.time}}'' {{se.type}}: {{se.player}}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

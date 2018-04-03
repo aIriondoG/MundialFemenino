@@ -1,0 +1,22 @@
+page-partidos {
+    .inicio{
+        background-image: url("../../assets/imgs/futbol.jpg");
+        background-repeat:no-repeat;
+        background-position:center center;
+        background-attachment:fixed;
+        -o-background-size: 100% 100%, auto;
+        -moz-background-size: 100% 100%, auto;
+        -webkit-background-size: 100% 100%, auto;
+        background-size: 100% 100%, auto;
+        color:white;
+
+        //background-color: red;
+    }
+    button{
+
+        opacity: 0.4;
+    }
+    .lista{
+        margin:1em;
+    }
+}

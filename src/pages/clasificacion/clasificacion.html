@@ -1,0 +1,67 @@
+<!--
+  Generated template for the ClasificacionPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Clasificacion</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="inicio">
+  <ion-list class="lista">
+    <!--<button ion-item *ngFor="let eq of equipo">-
+      <ion-item *ngFor="let eq of equipo">
+        
+          <p *ngIf=" eq.puntos > 11" >
+              {{eq.name}} {{eq.puntos}}
+          </p>
+         
+      </ion-item>
+    </button>-->
+    <ion-item >
+      <button (click)="itemTapped($event, 1)">
+        Grupo A
+      </button>
+    </ion-item>
+    <ion-item>
+      <button (click)="itemTapped($event, 2)">
+        Grupo B
+      </button>
+    </ion-item>
+    <ion-item>
+      <button (click)="itemTapped($event, 3)">
+        Grupo C
+      </button>
+    </ion-item>
+    <ion-item>
+      <button (click)="itemTapped($event, 4)">
+        Grupo D
+      </button>
+    </ion-item>
+    <ion-item>
+      <button (click)="itemTapped($event, 5)">
+        Grupo E
+      </button>
+    </ion-item>
+    <ion-item>
+      <button (click)="itemTapped($event, 6)">
+        Grupo F
+      </button>
+    </ion-item>
+    <ion-item>
+      <button (click)="itemTapped($event, 7)">
+        Grupo G
+      </button>
+    </ion-item>
+    <ion-item>
+      <button (click)="itemTapped($event, 8)">
+        Grupo H
+      </button>
+    </ion-item>
+  </ion-list>
+</ion-content>
