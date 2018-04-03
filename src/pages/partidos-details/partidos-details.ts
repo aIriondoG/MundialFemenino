@@ -13,11 +13,16 @@ export class PartidosDetailsPage {
   sItem: any;
   /*sELocal: any;
   sEVisitante: any;*/
-  sEvento : any;
+  sEventoLocal : any;
+  sEventoVisitante: any;
+  eventos: any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.sItem = navParams.get('partido');
     /*this.sELocal = this.sItem.eventoL;*/
-    this.sEvento = this.sItem.eventos;
+    this.sEventoLocal = this.sItem.home_team_events;
+    this.sEventoVisitante = this.sItem.away_team_events;
+    //this.eventos = this.sEventoLocal.concat(this.sEventoVisitante);
+    //this.eventos = this.sEventoVisitante;
   }
 
 }

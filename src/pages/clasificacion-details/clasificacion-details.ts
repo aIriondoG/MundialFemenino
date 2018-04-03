@@ -47,6 +47,9 @@ export class ClasificacionDetailsPage {
     if (this.grupo == 8) {
       this.nomGrupo = 'H';
     }
+    for(let k=0;k<this.equipo.length;k++){
+      console.log(this.equipo[k].country+""+this.equipo[k].id);}
+    
     console.log("Nombre del grupo: ", this.nomGrupo);
     //this.algo = this.equipo.sort((a, b) => a.puntos - b.puntos);
     console.log("Longitud de array de equipo: ", this.equipo.length);
@@ -55,13 +58,16 @@ export class ClasificacionDetailsPage {
     for (let i = 0; i < this.equipo.length; i++) {
       this.verdadero = false;
       for (let j = 0; j < this.equipo.length; j++) {
-        if (this.equipo[i].puntos >= this.equipo[j].puntos) {
+        
+        if (this.equipo[i].points >= this.equipo[j].points) {
           this.verdadero = true;
         } else {
           this.verdadero = false;
+          j=this.equipo.lenght-1;
         }
       }
       if (this.verdadero == true) {
+        console.log("Equipo "+this.equipo[i].country+" "+this.equipo[i].points+" "+punteroPunt);
         this.puntuacion[punteroPunt] = this.equipo[i];
         punteroPunt++;
       }
@@ -69,17 +75,19 @@ export class ClasificacionDetailsPage {
     //Obtencion de el segundo clasificado
     for (let i = 0; i < this.equipo.length; i++) {
       this.verdadero = false;
-      if (this.equipo[i].puntos < this.puntuacion[punteroPunt - 1].puntos) {
+      if (this.equipo[i].points < this.puntuacion[punteroPunt - 1].points) {
         for (let j = 0; j < this.equipo.length; j++) {
-          if (this.equipo[j].puntos < this.puntuacion[punteroPunt - 1].puntos) {
-            if (this.equipo[i].puntos >= this.equipo[j].puntos) {
+          if (this.equipo[j].points < this.puntuacion[punteroPunt - 1].points) {
+            if (this.equipo[i].points >= this.equipo[j].points) {
               this.verdadero = true;
             } else {
               this.verdadero = false;
+              j=this.equipo.lenght-1;
             }
           }
         }
         if (this.verdadero == true) {
+          console.log("Equipo "+this.equipo[i].country+" "+this.equipo[i].points+" "+punteroPunt);
           this.puntuacion[punteroPunt] = this.equipo[i];
           punteroPunt++;
         }
@@ -88,17 +96,19 @@ export class ClasificacionDetailsPage {
     //Obtencion del tercer clasificado
     for (let i = 0; i < this.equipo.length; i++) {
       this.verdadero = false;
-      if (this.equipo[i].puntos < this.puntuacion[punteroPunt - 1].puntos) {
+      if (this.equipo[i].points < this.puntuacion[punteroPunt - 1].points) {
         for (let j = 0; j < this.equipo.length; j++) {
-          if (this.equipo[j].puntos < this.puntuacion[punteroPunt - 1].puntos) {
-            if (this.equipo[i].puntos >= this.equipo[j].puntos) {
+          if (this.equipo[j].points < this.puntuacion[punteroPunt - 1].points) {
+            if (this.equipo[i].points >= this.equipo[j].points) {
               this.verdadero = true;
             } else {
               this.verdadero = false;
+              j=this.equipo.lenght-1;
             }
           }
         }
         if (this.verdadero == true) {
+          console.log("Equipo "+this.equipo[i].country+" "+this.equipo[i].points+" "+punteroPunt);
           this.puntuacion[punteroPunt] = this.equipo[i];
           punteroPunt++;
         }
@@ -107,17 +117,19 @@ export class ClasificacionDetailsPage {
     //Obtencion del cuarto clasificado del grupo
     for (let i = 0; i < this.equipo.length; i++) {
       this.verdadero = false;
-      if (this.equipo[i].puntos < this.puntuacion[punteroPunt - 1].puntos) {
+      if (this.equipo[i].points < this.puntuacion[punteroPunt - 1].points) {
         for (let j = 0; j < this.equipo.length; j++) {
-          if (this.equipo[j].puntos < this.puntuacion[punteroPunt - 1].puntos) {
-            if (this.equipo[i].puntos >= this.equipo[j].puntos) {
+          if (this.equipo[j].points < this.puntuacion[punteroPunt - 1].points) {
+            if (this.equipo[i].points >= this.equipo[j].points) {
               this.verdadero = true;
             } else {
               this.verdadero = false;
+              j=this.equipo.lenght-1;
             }
           }
         }
         if (this.verdadero == true) {
+          console.log("Equipo "+this.equipo[i].country+" "+this.equipo[i].points+" "+punteroPunt);
           this.puntuacion[punteroPunt] = this.equipo[i];
           punteroPunt++;
         }

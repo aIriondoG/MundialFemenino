@@ -6,13 +6,21 @@
 <ion-content class="inicio">
   <p text-center>{{sItem.location}}</p>
   <h3 text-center>
-    {{sItem.equipo_local}} {{sItem.golesLocales}} - {{sItem.golesVisitantes}} {{sItem.equipo_visitante}}
+    {{sItem.home_team.country}} {{sItem.home_team.goals}} - {{sItem.away_team.goals}} {{sItem.away_team.country}}
   </h3>
   <p text-center>{{sItem.status}}</p>
-  <ion-list class="lista">
-    <ion-item *ngFor="let se of sEvento ">
-      <p *ngIf=" se.local == 's'" text-left>{{se.time}}'' {{se.type}}: {{se.player}}</p>
-      <p *ngIf=" se.local == 'n'" text-right> {{se.time}}'' {{se.type}}: {{se.player}}</p>
-    </ion-item>
-  </ion-list>
+
+
+  <!--<p *ngIf=" se.local == 's'" text-left>{{se.time}}'' {{se.type}}: {{se.player}}</p>
+      <p *ngIf=" se.local == 'n'" text-right> {{se.time}}'' {{se.type}}: {{se.player}}</p>-->
+
+  <div style="float: left; width: 45%" class="listaLeft">
+      <p text-left *ngFor="let s of sEventoLocal">{{s.time}}'' {{s.type_of_event}}:<br> {{s.player}}</p>
+  </div>
+
+  <div style="float: right; width: 45%" class="listaRight">
+      <p text-right *ngFor="let v of sEventoVisitante">{{v.time}}'' {{v.type_of_event}}: <br> {{v.player}}</p>
+  </div>
+
+
 </ion-content>

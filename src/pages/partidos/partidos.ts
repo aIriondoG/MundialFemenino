@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { PartidosDetailsPage } from '../partidos-details/partidos-details'
-/**
- * Generated class for the PartidosPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { UserServiceProvider } from '../../providers/user-service/user-service';
 
 @IonicPage()
 @Component({
@@ -14,54 +9,37 @@ import { PartidosDetailsPage } from '../partidos-details/partidos-details'
   templateUrl: 'partidos.html',
 })
 export class PartidosPage {
-  evento: Array<{
-    id: number,
-    type: string,
-    player: string,
-    time: number,
-    idPartido: number,
-    local: string
-  }>;
-  /* eventosLocal: Array<{
+  /* evento: Array<{
      id: number,
      type: string,
      player: string,
      time: number,
-     idPartido: number
+     idPartido: number,
+     local: string
+   }>;
+   
+   partido: Array<{
+     idMatch: number,
+     location: string,
+     status: string,
+     equipo_local: string,
+     equipo_visitante: string,
+     golesLocales: number,
+     golesVisitantes: number,
+     eventos: Array<{
+       id: number,
+       type: string,
+       player: string,
+       time: number,
+       idPartido: number,
+       local: string
+     }>,
+     winner: string
    }>;*/
-  /*eventosVisitante: Array<{
-    id: number,
-    type: string,
-    player: string,
-    time: number,
-    idPartido: number
-  }>;*/
-
-  partido: Array<{
-    idMatch: number,
-    location: string,
-    status: string,
-    equipo_local: string,
-    equipo_visitante: string,
-    golesLocales: number,
-    golesVisitantes: number,
-    eventos: Array<{
-      id: number,
-      type: string,
-      player: string,
-      time: number,
-      idPartido: number,
-      local: string
-    }>,
-    winner: string
-  }>;
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.partido = [];
-    /*this.eventosLocal = [];
-    this.eventosVisitante = [];*/
-    this.evento = [];
-    this.evento.push({
+  partido: any;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public userService: UserServiceProvider) {
+   
+    /*this.evento.push({
       id: 1,
       type: 'Tarjeta Amarilla',
       player: 'Morrison',
@@ -100,8 +78,24 @@ export class PartidosPage {
       golesVisitantes: 0,
       eventos: this.evento,
       winner: 'Canada'
-    });
+    });*/
+
   }
+  ionViewDidLoad() {
+    this.userService.getMatches()
+      .subscribe(
+        (data) => {
+          this.partido = data;
+          console.log(this.partido);
+          console.log("Rellenamos");
+        },
+        (error) => {
+          console.error(error);
+        }
+      )
+
+  }
+
   itemTapped(event, partido) {
     this.navCtrl.push(PartidosDetailsPage, {
       partido: partido,

@@ -9,7 +9,8 @@
 <ion-content class="inicio">
     <ion-list class="lista">
         <button ion-item *ngFor="let p of partido" (click)="itemTapped($event, p)">
-            {{p.equipo_local}} - {{p.equipo_visitante}}
+            {{p.home_team.country}} - {{p.away_team.country}}
+          
         </button>
     </ion-list>
 </ion-content>

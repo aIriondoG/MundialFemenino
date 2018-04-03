@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ClasificacionDetailsPage } from '../clasificacion-details/clasificacion-details';
-
+import { UserServiceProvider } from '../../providers/user-service/user-service';
 @IonicPage()
 @Component({
   selector: 'page-clasificacion',
@@ -10,17 +10,18 @@ import { ClasificacionDetailsPage } from '../clasificacion-details/clasificacion
 export class ClasificacionPage {
 
 
-  equipo: Array<{
+  /*equipo: Array<{
     name: string,
     fifa_code: string,
     puntos: number,
     grupo: number
-  }>;
+  }>;*/
+  equipo: any;
   j: number;
   equipoPasar: any;
   numeroGrupo: number;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.equipoPasar = [];
+  constructor(public navCtrl: NavController, public navParams: NavParams, public userService: UserServiceProvider) {
+    /*this.equipoPasar = [];
     this.equipo = [];
     this.j = 0;
     this.equipo.push({
@@ -72,7 +73,21 @@ export class ClasificacionPage {
       fifa_code: 'Fra',
       puntos: 15,
       grupo: 2
-    });
+    });*/
+
+  }
+  ionViewDidLoad() {
+    this.userService.getTeams()
+      .subscribe(
+        (data) => {
+          this.equipo = data;
+          console.log(this.equipo);
+          console.log("Rellenamos");
+        },
+        (error) => {
+          console.error(error);
+        }
+      )
 
   }
 
@@ -81,8 +96,8 @@ export class ClasificacionPage {
     this.equipoPasar = [];
     for (let i = 0; i < this.equipo.length; i++) {
       console.log("i: ", i);
-      console.log("Grupo: ", this.equipo[i].grupo);
-      if (this.equipo[i].grupo == numeroGrupo) {
+      console.log("Grupo: ", this.equipo[i].group_id);
+      if (this.equipo[i].group_id == numeroGrupo) {
         console.log("Introduciendo el equipo numero " + i);
         this.equipoPasar[this.j] = this.equipo[i];
         this.j++;

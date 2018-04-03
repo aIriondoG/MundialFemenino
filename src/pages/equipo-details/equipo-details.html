@@ -14,29 +14,29 @@
   <ion-list class="lista">
     <ion-item class="nom">
         <h3 text-center>
-            Estadisticas de {{sItem.name}}
+            Estadisticas de {{sItem.country}}
         </h3>
     </ion-item>
     <ion-item>
-        Partidos ganados: {{sItem.win}}
+        Partidos ganados: {{sItem.wins}}
     </ion-item>
     <ion-item>
-        Partidos empatados: {{sItem.draw}}
+        Partidos empatados: {{sItem.draws}}
     </ion-item>
     <ion-item>
-        Partidos perdidos: {{sItem.lose}}
+        Partidos perdidos: {{sItem.losses}}
     </ion-item>
     <ion-item>
-        Partidos jugados: {{sItem.win+sItem.draw+sItem.lose}}
+        Partidos jugados: {{sItem.wins+sItem.draws+sItem.losses}}
     </ion-item>
     <ion-item>
-        Goles marcados: {{sItem.goals}}
+        Goles marcados: {{sItem.goals_for}}
     </ion-item>
     <ion-item>
-        Goles encajados: {{sItem.goalsAgainst}}
+        Goles encajados: {{sItem.goals_against}}
     </ion-item>
     <ion-item>
-      Diferencia de goles:{{sItem.goals-sItem.goalsAgainst}}
+      Diferencia de goles: {{sItem.goals_for-sItem.goals_against}}
     </ion-item>
   </ion-list>
   <!--<ul text_center>

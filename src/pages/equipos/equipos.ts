@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { EquipoDetailsPage } from '../equipo-details/equipo-details';
+import {UserServiceProvider} from '../../providers/user-service/user-service';
 
 @IonicPage()
 @Component({
@@ -9,7 +10,7 @@ import { EquipoDetailsPage } from '../equipo-details/equipo-details';
 })
 export class EquiposPage {
   
-  items: Array<{
+  /*items: Array<{
     name: string,
     fifa_code: string,
     puntos: number,
@@ -19,9 +20,10 @@ export class EquiposPage {
     lose:number,
     goals: number,
     goalsAgainst: number,
-   }>;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.items =[];
+   }>;*/
+   items: any;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public userService: UserServiceProvider) {
+    /*this.items =[];
     this.items.push({
       name : 'Canada',
       fifa_code: 'CAN',
@@ -43,7 +45,21 @@ export class EquiposPage {
       lose: 0,
       goals: 14,
       goalsAgainst:3
-    });
+    });*/
+  }
+  ionViewDidLoad() {
+    this.userService.getTeams()
+      .subscribe(
+        (data) => {
+          this.items = data;
+          console.log(this.items);
+          console.log("Rellenamos");
+        },
+        (error) => {
+          console.error(error);
+        }
+      )
+
   }
   itemTapped(event, items) {
     this.navCtrl.push(EquipoDetailsPage, {
