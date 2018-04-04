@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import {EquipoDetailsPage} from '../equipo-details/equipo-details';
 
 @IonicPage()
 @Component({
@@ -14,13 +14,13 @@ export class ClasificacionDetailsPage {
   verdadero: boolean;
   nomGrupo: string;
   clasificacion: any;
-  puntuacion: any;
+  items: any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.equipo =[];
     this.grupo = navParams.get('numeroGrupo');
     this.equipo = navParams.get('equipoPasar');
     console.log("Grupo seleccionado", this.grupo);
-    this.puntuacion = [];
+    this.items = [];
     this.verdadero = false;
     
     if (this.grupo == 1) {
@@ -68,16 +68,16 @@ export class ClasificacionDetailsPage {
       }
       if (this.verdadero == true) {
         console.log("Equipo "+this.equipo[i].country+" "+this.equipo[i].points+" "+punteroPunt);
-        this.puntuacion[punteroPunt] = this.equipo[i];
+        this.items[punteroPunt] = this.equipo[i];
         punteroPunt++;
       }
     }
     //Obtencion de el segundo clasificado
     for (let i = 0; i < this.equipo.length; i++) {
       this.verdadero = false;
-      if (this.equipo[i].points < this.puntuacion[punteroPunt - 1].points) {
+      if (this.equipo[i].points < this.items[punteroPunt - 1].points) {
         for (let j = 0; j < this.equipo.length; j++) {
-          if (this.equipo[j].points < this.puntuacion[punteroPunt - 1].points) {
+          if (this.equipo[j].points < this.items[punteroPunt - 1].points) {
             if (this.equipo[i].points >= this.equipo[j].points) {
               this.verdadero = true;
             } else {
@@ -88,7 +88,7 @@ export class ClasificacionDetailsPage {
         }
         if (this.verdadero == true) {
           console.log("Equipo "+this.equipo[i].country+" "+this.equipo[i].points+" "+punteroPunt);
-          this.puntuacion[punteroPunt] = this.equipo[i];
+          this.items[punteroPunt] = this.equipo[i];
           punteroPunt++;
         }
       }
@@ -96,9 +96,9 @@ export class ClasificacionDetailsPage {
     //Obtencion del tercer clasificado
     for (let i = 0; i < this.equipo.length; i++) {
       this.verdadero = false;
-      if (this.equipo[i].points < this.puntuacion[punteroPunt - 1].points) {
+      if (this.equipo[i].points < this.items[punteroPunt - 1].points) {
         for (let j = 0; j < this.equipo.length; j++) {
-          if (this.equipo[j].points < this.puntuacion[punteroPunt - 1].points) {
+          if (this.equipo[j].points < this.items[punteroPunt - 1].points) {
             if (this.equipo[i].points >= this.equipo[j].points) {
               this.verdadero = true;
             } else {
@@ -109,7 +109,7 @@ export class ClasificacionDetailsPage {
         }
         if (this.verdadero == true) {
           console.log("Equipo "+this.equipo[i].country+" "+this.equipo[i].points+" "+punteroPunt);
-          this.puntuacion[punteroPunt] = this.equipo[i];
+          this.items[punteroPunt] = this.equipo[i];
           punteroPunt++;
         }
       }
@@ -117,9 +117,9 @@ export class ClasificacionDetailsPage {
     //Obtencion del cuarto clasificado del grupo
     for (let i = 0; i < this.equipo.length; i++) {
       this.verdadero = false;
-      if (this.equipo[i].points < this.puntuacion[punteroPunt - 1].points) {
+      if (this.equipo[i].points < this.items[punteroPunt - 1].points) {
         for (let j = 0; j < this.equipo.length; j++) {
-          if (this.equipo[j].points < this.puntuacion[punteroPunt - 1].points) {
+          if (this.equipo[j].points < this.items[punteroPunt - 1].points) {
             if (this.equipo[i].points >= this.equipo[j].points) {
               this.verdadero = true;
             } else {
@@ -130,11 +130,18 @@ export class ClasificacionDetailsPage {
         }
         if (this.verdadero == true) {
           console.log("Equipo "+this.equipo[i].country+" "+this.equipo[i].points+" "+punteroPunt);
-          this.puntuacion[punteroPunt] = this.equipo[i];
+          this.items[punteroPunt] = this.equipo[i];
           punteroPunt++;
         }
       }
     }
+
+    
     //
+  }
+  itemTapped(event, items) {
+    this.navCtrl.push(EquipoDetailsPage, {
+      items: items
+    });
   }
 }

@@ -15,11 +15,13 @@
 
 <ion-content class="inicio">
   <ion-list class="lista">
-      <button ion-item class="tit">
+      <button ion-item no-lines text-center class="tit">
         Grupo {{nomGrupo}}
         
       </button>
-    <button ion-item *ngFor="let e of puntuacion" class="bot">
+      
+    <button ion-item no-lines *ngFor="let e of items" (click)="itemTapped($event, e)" class="bot">
+        <img src="../../assets/imgs/Banderas/{{e.country}}.png" alt="Imagen del equipo" width="30" height="15">
       {{e.country}} --
         {{e.points}} puntos.
       

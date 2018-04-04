@@ -1,6 +1,6 @@
 page-partidos-details {
     .inicio{
-        background-image: url("../../assets/imgs/EnJ.jpg");
+        background-image: url("../../assets/imgs/partidos.jpg");
         background-repeat:no-repeat;
         background-position:center center;
         background-attachment:fixed;
@@ -8,7 +8,7 @@ page-partidos-details {
         -moz-background-size: 100% 100%, auto;
         -webkit-background-size: 100% 100%, auto;
         background-size: 100% 100%, auto;
-        color:white;
+        color:black;
 
         //background-color: red;
     }
@@ -22,6 +22,7 @@ page-partidos-details {
        margin-bottom:1em;
     }
     .listaRight{
+        
         background-color:white ;
         color:black;
         margin-right:1em;
@@ -29,6 +30,23 @@ page-partidos-details {
        margin-bottom:1em;
        opacity: 0.6;
        
+    }
+    .ter{
+        margin-left:6em;
+        margin-right:6em;
+        background-color:rgba(0, 0, 0,0.6);
+        color:white;
+    }
+    .datos{
+        color:white;
+        //background-color:rgba(255, 255, 255,0.3);
+        background-color:rgba(0, 0, 0,0.4);
+    }
+    .datos_text{
+        color:white;
+    }
+    .text{
+        color:white;
     }
    
 }

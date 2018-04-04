@@ -1,6 +1,6 @@
 page-equipos {
     .inicio{
-        background-image: url("../../assets/imgs/futbol.jpg");
+        background-image: url("../../assets/imgs/futbol4.jpg");
         background-repeat:no-repeat;
         background-position:center center;
         background-attachment:fixed;
@@ -14,14 +14,28 @@ page-equipos {
     button{
         
     }
+    .txt{
+        color:white;
+        //opacity: 0.8;
+    }
+    .nom{
+        //background-color: black;
+        background-color:rgba(0,0,0,0.3); /* rgbA */
+        //color:white;
+    }
+    .btn{
+        background-color: rgba(0,0,0,0.5);
+        color: white;
+    }
+    .fc{
+        color:white;
+    }
     .lista{
-        
+        color: white;
         margin-top: 2em;
         margin-left: 2em;
         margin-right: 2em;
-        opacity: 0.6;
-        background-color: rgba(0,0,0,0.5);
-        color: black;
+
     }
     
 }

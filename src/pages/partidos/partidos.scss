@@ -1,6 +1,6 @@
 page-partidos {
     .inicio{
-        background-image: url("../../assets/imgs/futbol.jpg");
+        background-image: url("../../assets/imgs/EnJ.jpg");
         background-repeat:no-repeat;
         background-position:center center;
         background-attachment:fixed;
@@ -12,10 +12,30 @@ page-partidos {
 
         //background-color: red;
     }
+    .estado{
+        color:white;
+        font-size: 10px;
+    }
+    .tit{
+        background-color:rgba(0, 0, 0,0.4);
+        color:white;
+    }
+    .btn{
+        background-color:rgba(0, 0, 0,0.4);
+        color:white;
+    }
+    .fecha{
+        color:white;
+    }
     .lista{
+        border-top: 0px;
+        border-left: 0px;
+        border-right: 0px;
+        border-bottom: 0px;
         margin-top: 2em;
-        margin-left: 2em;
-        margin-right: 2em;
-        opacity: 0.6;
+        margin-left: 5.5em;
+        margin-right: 5.5em;
+        color:white;
+        //opacity: 0.6;
     }
 }

@@ -2,23 +2,29 @@
   <ion-navbar>
     <ion-title>Equipos</ion-title>
   </ion-navbar>
-
+  <ion-item no-lines class="nom">
+    <h3 text-center class="txt">
+      Listado de equipos
+    </h3>
+  </ion-item>
 </ion-header>
 
 
 <ion-content class="inicio">
-    <!--<button ion-item class="indice">
+  <!--<button ion-item class="indice">
         Siglas del Equipo
         <p item-right>
           Puntos
         </p>
       </button>-->
   <ion-list class="lista">
-      <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-        {{item.country}}
-        <p item-right>
-          {{item.fifa_code}}
-        </p>
-      </button>
+
+
+    <button ion-item no-lines *ngFor="let item of items" (click)="itemTapped($event, item)" class="btn">
+      <img src="../../assets/imgs/Banderas/{{item.country}}.png" alt="Imagen del equipo" width="30" height="15"> {{item.country}}
+      <p item-right class="fc">
+        {{item.fifa_code}}
+      </p>
+    </button>
   </ion-list>
 </ion-content>

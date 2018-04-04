@@ -1,6 +1,6 @@
 page-equipo-details {
     .inicio{
-        background-image: url("../../assets/imgs/estadistica.jpg");
+        background-image: url("../../assets/imgs/partidos.jpg");
         background-repeat:no-repeat;
         background-position:center center;
         background-attachment:fixed;
@@ -12,16 +12,26 @@ page-equipo-details {
 
         //background-color: red;
     }
+    
     .lista{
-        margin-top: 1.5em;
+       margin-top: 1.5em;
         margin-left: 2em;
         margin-right: 2em;
+       
         //background-color:rgba(4, 52, 178,0.6);
-        opacity: 0.7;
+        //opacity: 0.7;
+    }
+    .datos{
+        color:white;
+        //background-color:rgba(255, 255, 255,0.3);
+        background-color:rgba(0, 0, 0,0.4);
     }
     .nom{
-        background-color: black;
+        //background-color:rgba(0, 0, 0,0.1);
+        background-color:rgba(0, 0,0,0.45);
+        
+    }
+    .nom_text{
         color:white;
-        opacity: 0.8;
     }
 }
