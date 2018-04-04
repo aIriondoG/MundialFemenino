@@ -2,11 +2,12 @@
   <ion-navbar>
     <ion-title>Equipos</ion-title>
   </ion-navbar>
-  <ion-item no-lines class="nom">
+  <!--<ion-item no-lines class="nom">
     <h3 text-center class="txt">
       Listado de equipos
     </h3>
-  </ion-item>
+  </ion-item>-->
+  <ion-searchbar (ionInput)="getItems($event)">Barra</ion-searchbar>
 </ion-header>
 
 
@@ -17,7 +18,7 @@
           Puntos
         </p>
       </button>-->
-  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  
   <ion-list class="lista">
 
 

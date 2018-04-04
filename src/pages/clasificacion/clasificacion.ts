@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ClasificacionDetailsPage } from '../clasificacion-details/clasificacion-details';
 import { UserServiceProvider } from '../../providers/user-service/user-service';
 import { ToastController } from 'ionic-angular';
+import { LoadingController } from 'ionic-angular';
 @IonicPage()
 @Component({
   selector: 'page-clasificacion',
@@ -10,18 +11,12 @@ import { ToastController } from 'ionic-angular';
 })
 export class ClasificacionPage {
 
-
-  /*equipo: Array<{
-    name: string,
-    fifa_code: string,
-    puntos: number,
-    grupo: number
-  }>;*/
   equipo: any;
   j: number;
   equipoPasar: any;
   numeroGrupo: number;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public userService: UserServiceProvider, private toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+     public userService: UserServiceProvider, private toastCtrl: ToastController, public loadingCtrl: LoadingController) {
     this.userService.getTeams()
       .subscribe(
         (data) => {
@@ -33,6 +28,14 @@ export class ClasificacionPage {
           console.error(error);
         }
       )
+      this.presentLoading();
+  }
+  presentLoading() {
+    let loader = this.loadingCtrl.create({
+      content: "Cargando grupos...",
+      duration: 3000
+    });
+    loader.present();
   }
   ionViewDidLoad() {
     this.userService.getTeams()
@@ -50,7 +53,7 @@ export class ClasificacionPage {
   }
   presentToast() {
     let toast = this.toastCtrl.create({
-      message: 'Los equipos aun no han sido cargados, vuelve a clickar en el grupo',
+      message: 'Equipos cargados. Vuelve a hacer click en el grupo en el que deseas entrar para ver su calificacion',
       duration: 3000,
       position: 'middle'
     });

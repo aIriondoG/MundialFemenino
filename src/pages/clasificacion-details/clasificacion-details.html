@@ -15,16 +15,16 @@
 
 <ion-content class="inicio">
   <ion-list class="lista">
-      <button ion-item no-lines text-center class="tit">
-        Grupo {{nomGrupo}}
-        
-      </button>
-      
-    <button ion-item no-lines *ngFor="let e of items" (click)="itemTapped($event, e)" class="bot">
-        <img src="../../assets/imgs/Banderas/{{e.country}}.png" alt="Imagen del equipo" width="30" height="15">
-      {{e.country}} --
-        {{e.points}} puntos.
-      
+
+    <button ion-item no-lines text-center class="tit">
+      Grupo {{nomGrupo}}
+
     </button>
+
+    <button ion-item no-lines *ngFor="let e of items" (click)="itemTapped($event, e)" class="bot">
+      <img src="../../assets/imgs/Banderas/{{e.country}}.png" alt="Imagen del equipo" width="30" height="15"> {{e.country}} -- {{e.points}} puntos.
+
+    </button>
+
   </ion-list>
 </ion-content>

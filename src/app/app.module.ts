@@ -25,7 +25,8 @@ import { UserServiceProvider } from '../providers/user-service/user-service';
     EquipoDetailsPage,
     PartidosDetailsPage,
     ClasificacionPage,
-    ClasificacionDetailsPage
+    ClasificacionDetailsPage,
+    SlidesPage
 
   ],
   imports: [
@@ -43,7 +44,8 @@ import { UserServiceProvider } from '../providers/user-service/user-service';
     EquipoDetailsPage,
     PartidosDetailsPage,
     ClasificacionPage,
-    ClasificacionDetailsPage
+    ClasificacionDetailsPage,
+    SlidesPage
 
   ],
   providers: [
